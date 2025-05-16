@@ -37,23 +37,26 @@ const InsuranceSection = () => {
     <section className="py-8 bg-white" id="convenios">
       <div className="container mx-auto px-4">
         <div className="bg-[#038dff] rounded-3xl shadow-lg p-8">
-          <div className="grid grid-cols-4 gap-6">
-            {/* Title */}
-            <div className="col-span-1">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
-                Convênios<br />Credenciados
-              </h2>
-            </div>
+          <div className="flex flex-col space-y-6">
+            {/* First Row */}
+            <div className="flex gap-6">
+              {/* Title */}
+              <div className="w-[200px] flex-shrink-0">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  Convênios<br />Credenciados
+                </h2>
+              </div>
 
-            {/* First Row - 3 Logos */}
-            <div className="col-span-3 grid grid-cols-3 gap-6">
-              {insuranceLogos.row1.map((logo, index) => (
-                <LogoCard key={`row1-${index}`} {...logo} />
-              ))}
+              {/* First Row - 3 Logos */}
+              <div className="flex-1 grid grid-cols-3 gap-6">
+                {insuranceLogos.row1.map((logo, index) => (
+                  <LogoCard key={`row1-${index}`} {...logo} />
+                ))}
+              </div>
             </div>
 
             {/* Second Row - 5 Logos */}
-            <div className="col-span-4 grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-5 gap-6">
               {insuranceLogos.row2.map((logo, index) => (
                 <LogoCard key={`row2-${index}`} {...logo} />
               ))}
