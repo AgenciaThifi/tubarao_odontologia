@@ -4,91 +4,75 @@ import Image from 'next/image';
 
 const services = [
   {
+    icon: "/icon_harmonizacao.png",
     title: "Harmonização facial",
-    description: "Procedimentos estéticos para harmonizar suas características faciais e realçar sua beleza natural, combinando diferentes técnicas para um resultado equilibrado e natural.",
-    icon: (
-      <Image
-        src="/Icon_facialHarmonization.png"
-        alt="Harmonização Facial"
-        width={48}
-        height={48}
-      />
-    ),
-    color: "blue"
+    description: "Realce sua beleza natural com procedimentos personalizados",
+    bgColor: "bg-[#038DFF]"
   },
   {
+    icon: "/icon_lente.png",
     title: "Lente de contato",
-    description: "Lentes de contato dentais para um sorriso perfeito e natural, corrigindo forma, cor e alinhamento dos dentes com um procedimento minimamente invasivo.",
-    icon: (
-      <Image
-        src="/Icon_contactLens.png"
-        alt="Lente de Contato"
-        width={48}
-        height={48}
-      />
-    ),
-    color: "red"
+    description: "Transforme seu sorriso com lentes de contato dental",
+    bgColor: "bg-[#FF0000]"
   },
   {
+    icon: "/icon_aparelho.png",
     title: "Aparelho",
-    description: "Tratamento ortodôntico com diferentes tipos de aparelhos para alinhar seus dentes e corrigir problemas de mordida, proporcionando um sorriso harmonioso.",
-    icon: (
-      <Image
-        src="/Icon_braces.png"
-        alt="Aparelho"
-        width={48}
-        height={48}
-      />
-    ),
-    color: "blue"
+    description: "Alinhe seus dentes com tecnologia e conforto",
+    bgColor: "bg-[#038DFF]"
   },
   {
+    icon: "/icon_implante.png",
     title: "Implante",
-    description: "Implantes dentários de alta qualidade para substituir dentes perdidos com naturalidade e funcionalidade, devolvendo sua confiança ao sorrir.",
-    icon: (
-      <Image
-        src="/Icon_implant.png"
-        alt="Implante"
-        width={48}
-        height={48}
-      />
-    ),
-    color: "red"
+    description: "Recupere sua confiança com implantes naturais",
+    bgColor: "bg-[#FF0000]"
   }
 ];
 
+const ServiceCard = ({ icon, title, description, bgColor }: {
+  icon: string;
+  title: string;
+  description: string;
+  bgColor: string;
+}) => (
+  <div className={`${bgColor} rounded-3xl p-8 flex flex-col items-center text-center h-full`}>
+    <div className="relative w-16 h-16 mb-6">
+      <Image
+        src={icon}
+        alt={title}
+        fill
+        className="object-contain"
+        sizes="64px"
+      />
+    </div>
+    <h3 className="text-white text-xl font-bold mb-4 font-poppins">
+      {title}
+    </h3>
+    <p className="text-white font-poppins">
+      {description}
+    </p>
+  </div>
+);
+
 const ServicesSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id="servicos">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-          Alguns serviços
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-poppins">
+            Alguns serviços
+          </h2>
+          <p className="text-xl text-gray-600 font-poppins">
+            Conheça alguns de nossos serviços!
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <div 
+            <ServiceCard
               key={index}
-              className={`p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ${
-                service.color === "blue" ? "bg-[#038dff] bg-opacity-5" : "bg-[#f40002] bg-opacity-5"
-              }`}
-            >
-              <div className="flex items-start gap-4">
-                <div className={`flex-shrink-0 ${
-                  service.color === "blue" ? "text-[#038dff]" : "text-[#f40002]"
-                }`}>
-                  {service.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            </div>
+              {...service}
+            />
           ))}
         </div>
       </div>
