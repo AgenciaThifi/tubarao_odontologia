@@ -1,33 +1,35 @@
 "use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
+import { WhatsappLogo } from "@phosphor-icons/react";
 
 const CTASection = () => {
   return (
-    <section className="bg-[#f40002] py-12" id="agendar">
+    <section className="bg-[#008CFF] py-16">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Agende uma Avaliação
-          </h2>
-          <p className="text-white text-lg mb-8 font-normal">
-            Clique no botão do WhatsApp e informe o dia e horário que deseja comparecer para sua Avaliação.
-          </p>
-          <Link 
-            href="http://wa.me/48999584399"
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          {/* Text Content */}
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-x-3 text-white">
+              <h2 className="text-2xl md:text-3xl font-bold font-poppins">
+                Agende uma Avaliação
+              </h2>
+              <p className="text-lg md:text-xl font-poppins">
+                Clique no botão de WhatsApp e agende sua consulta agora mesmo!
+              </p>
+            </div>
+          </div>
+
+          {/* WhatsApp Button */}
+          <a
+            href="https://wa.me/5548999999999"
             target="_blank"
-            className="inline-flex items-center bg-white text-[#f40002] px-8 py-4 rounded-full font-bold text-lg hover:bg-transparent hover:text-white border-2 border-white transition-all"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-4 bg-white text-[#f40002] rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:brightness-105 font-poppins"
+            aria-label="Agendar via WhatsApp"
           >
+            <WhatsappLogo size={24} weight="fill" className="mr-2" />
             WhatsApp
-            <Image
-              src="/Icon_whatsapp_red_bigger.png"
-              alt="WhatsApp"
-              width={32}
-              height={32}
-              className="ml-3 object-contain group-hover:brightness-0 group-hover:invert"
-            />
-          </Link>
+          </a>
         </div>
       </div>
     </section>
