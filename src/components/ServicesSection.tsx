@@ -4,27 +4,27 @@ import Image from 'next/image';
 
 const services = [
   {
-    icon: "/Icon_service_1.png",
+    icon: "/Icon_facialHarmonization.png",
     title: "Harmonização facial",
-    description: "Realce sua beleza natural com procedimentos personalizados",
+    description: "A harmonização facial é um conjunto de procedimentos estéticos minimamente invasivos que realçam a beleza natural e promovem equilíbrio entre os traços do rosto. Utilizamos técnicas seguras e produtos de alta qualidade para melhorar contornos, suavizar linhas de expressão e valorizar a autoestima do paciente. Tudo com acompanhamento profissional e resultado natural.",
     bgColor: "bg-[#038DFF]"
   },
   {
-    icon: "/Icon_service_2.png",
+    icon: "/Icon_contactLens.png",
     title: "Lente de contato",
-    description: "Transforme seu sorriso com lentes de contato dental",
+    description: "As lentes de contato dental são lâminas ultrafinas de porcelana aplicadas sobre os dentes para corrigir forma, cor, tamanho e pequenas imperfeições. É uma solução rápida, duradoura e minimamente invasiva para quem deseja conquistar um sorriso mais branco, alinhado e harmônico. Tudo com planejamento digital e precisão nos detalhes para um resultado natural e encantador.",
     bgColor: "bg-[#FF0000]"
   },
   {
-    icon: "/Icon_service_3.png",
+    icon: "/Icon_braces.png",
     title: "Aparelho",
-    description: "Alinhe seus dentes com tecnologia e conforto",
+    description: "O uso do aparelho ortodôntico corrige o alinhamento dos dentes e a mordida, melhorando não só a estética do sorriso, mas também a saúde bucal como um todo. Trabalhamos com diferentes tipos de aparelhos — do tradicional ao estético — para atender às necessidades de cada paciente com conforto, eficiência e acompanhamento especializado em todas as etapas do tratamento.",
     bgColor: "bg-[#038DFF]"
   },
   {
-    icon: "/Icon_service_4.png",
+    icon: "/Icon_implant.png",
     title: "Implante",
-    description: "Recupere sua confiança com implantes naturais",
+    description: "O implante dentário é a solução ideal para quem perdeu um ou mais dentes e deseja recuperar o sorriso com segurança, estética e funcionalidade. Trata-se de uma estrutura de titânio fixada ao osso, que substitui a raiz do dente perdido e serve de base para próteses definitivas. Um procedimento moderno, eficaz e com resultados que devolvem a confiança ao sorrir.",
     bgColor: "bg-[#FF0000]"
   }
 ];
@@ -35,18 +35,18 @@ const ServiceCard = ({ icon, title, description, bgColor }: {
   description: string;
   bgColor: string;
 }) => (
-  <div className={`${bgColor} rounded-3xl w-[280px] h-[280px] flex flex-col items-center justify-center text-center p-8`}>
-    <div className="relative w-20 h-20 mb-6">
+  <div className={`${bgColor} rounded-3xl shadow-lg w-full md:w-[300px] min-h-[400px] flex flex-col items-center text-center p-8`}>
+    <div className="relative w-24 h-24 mb-6">
       <Image
         src={icon}
         alt={title}
         fill
         className="object-contain"
-        sizes="80px"
+        sizes="96px"
         priority
       />
     </div>
-    <h3 className="text-white text-xl font-bold mb-3 font-poppins">
+    <h3 className="text-white text-2xl font-bold mb-4 font-poppins">
       {title}
     </h3>
     <p className="text-white text-sm font-poppins leading-relaxed">
@@ -60,15 +60,15 @@ const ServicesSection = () => {
     <section className="py-20 bg-white" id="servicos">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 font-poppins">
+          <h2 className="text-[#038DFF] text-4xl font-bold mb-4 font-poppins">
             Alguns serviços
           </h2>
-          <p className="text-xl text-gray-600 font-poppins">
+          <p className="text-xl text-gray-600 font-poppins font-normal">
             Conheça alguns de nossos serviços!
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-start gap-8">
+        <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
