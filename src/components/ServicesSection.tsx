@@ -40,7 +40,7 @@ const ServiceCard = ({ icon, title, description, bgColor, isBlue }: {
   bgColor: string;
   isBlue: boolean;
 }) => (
-  <div className={`${bgColor} rounded-3xl shadow-lg w-full md:w-[300px] min-h-[400px] flex flex-col items-center text-center p-8 transform ${isBlue ? '-translate-y-2' : 'translate-y-2'} transition-transform`}>
+  <div className={`${bgColor} shadow-lg w-full md:w-[300px] min-h-[400px] flex flex-col items-center text-center p-8 transform ${isBlue ? '-translate-y-3' : 'translate-y-3'} transition-transform`}>
     <div className="relative w-24 h-24 mb-6">
       <Image
         src={icon}
