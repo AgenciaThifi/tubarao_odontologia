@@ -4,25 +4,25 @@ import Image from 'next/image';
 
 const services = [
   {
-    icon: "/icon_harmonizacao.png",
+    icon: "/Icon_service_1.png",
     title: "Harmonização facial",
     description: "Realce sua beleza natural com procedimentos personalizados",
     bgColor: "bg-[#038DFF]"
   },
   {
-    icon: "/icon_lente.png",
+    icon: "/Icon_service_2.png",
     title: "Lente de contato",
     description: "Transforme seu sorriso com lentes de contato dental",
     bgColor: "bg-[#FF0000]"
   },
   {
-    icon: "/icon_aparelho.png",
+    icon: "/Icon_service_3.png",
     title: "Aparelho",
     description: "Alinhe seus dentes com tecnologia e conforto",
     bgColor: "bg-[#038DFF]"
   },
   {
-    icon: "/icon_implante.png",
+    icon: "/Icon_service_4.png",
     title: "Implante",
     description: "Recupere sua confiança com implantes naturais",
     bgColor: "bg-[#FF0000]"
@@ -68,7 +68,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="flex justify-center items-start gap-8">
+        <div className="flex flex-wrap justify-center items-start gap-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
