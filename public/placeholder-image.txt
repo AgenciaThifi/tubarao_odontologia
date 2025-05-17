@@ -1,0 +1,22 @@
+Required images for the project:
+
+1. Icon_logotype.png - Logo
+2. Image_background.png - Hero section background
+3. Image_doctor.png - Doctor image
+4. Icon_share_red.png - Share icon
+5. Icon_whatsapp_red.png - WhatsApp icon
+6. Icon_instagram_red.png - Instagram icon
+7. Icon_whatsapp_red_bigger.png - Larger WhatsApp icon
+8. clinic-image.jpg - About section image
+9. Icon_facialHarmonization.png - Service icon
+10. Icon_contactLens.png - Service icon
+11. Icon_braces.png - Service icon
+12. Icon_implant.png - Service icon
+13. Icon_agreement_1.png through Icon_agreement_4.png - Insurance partner logos
+14. Icon_agreement_mockup.png - Placeholder logo
+15. Icon_avaliation_1.png and Icon_avaliation_2.png - Testimonial avatars
+16. Icon_hour.png - Working hours icon
+17. Icon_telephone.png - Phone icon
+18. Icon_location.png - Location icon
+
+Note: Please ensure all images are placed in the public directory.
