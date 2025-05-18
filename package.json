@@ -5,10 +5,11 @@
   "homepage": "https://odontotubarao.com.br",
   "scripts": {
     "dev": "PORT=8000 next dev --turbopack",
-    "build": "next build && next export",
+    "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "next build && next export && gh-pages -d out"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
