@@ -3,19 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const IconShareRed = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-4 h-4 text-[#f40002]"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4 12v-1a4 4 0 014-4h8m0 0l-4-4m4 4l-4 4" />
-  </svg>
-);
-
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen bg-[#038dff] pt-20 pb-40 overflow-hidden">
