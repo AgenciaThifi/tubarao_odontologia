@@ -2,30 +2,30 @@ name: Build and Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: [ backup/main ]  # ou 'main', onde você desenvolve
+    branches: [ backup/main ]  # ou 'main', troque aqui se precisar
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read        # permite checkout
-      pages: write          # permite deploy Pages
-      id-token: write       # necessário internamente
+      contents: read    # para checkout
+      pages: write      # para publicar no Pages
+      id-token: write   # necessário para deploy-pages
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Use Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build production
-        run: npm run build     # gera out/
+      - name: Build Next.js (static export)
+        run: npm run build
 
       - name: Copy .nojekyll
         run: cp public/.nojekyll out/.nojekyll
