@@ -1,0 +1,45 @@
+name: Deploy Next.js to GitHub Pages
+
+# Dispara em todo push para a sua branch principal
+on:
+  push:
+    branches:
+      - backup/main   # ou 'main', se for onde você faz o desenvolvimento
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      # 1) Clona seu código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2) Instala o Node.js
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3) Instala as deps
+      - name: Install dependencies
+        run: npm ci
+
+      # 4) Executa o build (gera pasta out/ com output: 'export')
+      - name: Build Next.js (static export)
+        run: npm run build
+
+      # 5) Copia o .nojekyll para dentro de out/
+      - name: Copy .nojekyll into out/
+        run: cp public/.nojekyll out/.nojekyll
+
+      # 6) Publica o conteúdo de out/ no branch gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./out
