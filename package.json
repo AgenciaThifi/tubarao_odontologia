@@ -1,10 +1,10 @@
 {
-  "name": "my-app",
+  "name": "odontotubarao",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://odontotubarao.com.br",
   "scripts": {
-    "dev": "PORT=8000 next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
