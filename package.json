@@ -2,13 +2,12 @@
   "name": "odontotubarao",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://odontotubarao.com.br",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "next build && gh-pages -d out"
+    "export": "next build && next export",
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

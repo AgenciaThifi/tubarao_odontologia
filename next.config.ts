@@ -1,18 +1,10 @@
-import type { NextConfig } from 'next'
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  output: "export",
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.pexels.com',
-        pathname: '/photos/**',
-      },
-    ],
-    unoptimized: true,
+    unoptimized: true, // Evita erro com imagens no modo estático
   },
-  trailingSlash: true,
-}
+};
 
-export default nextConfig
+export default nextConfig;
