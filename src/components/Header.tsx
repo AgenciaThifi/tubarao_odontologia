@@ -38,7 +38,11 @@ const Header = () => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const elementTop = element.offsetTop;
+      const elementHeight = element.offsetHeight;
+      const viewportHeight = window.innerHeight;
+      const scrollTo = elementTop - (viewportHeight / 2) + (elementHeight / 2);
+      window.scrollTo({ top: scrollTo, behavior: "smooth" });
       setActive(id);
     }
   };

@@ -30,7 +30,8 @@ const HeroSection = () => {
             
             {/* CTA Button */}
             <Link 
-  href="#cta"
+  href="http://wa.me/48999584399"
+  target="_blank"
   className="inline-flex items-center bg-white text-black px-4 py-2 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all group mb-4 w-fit"
 >
   Agendar Avaliação
