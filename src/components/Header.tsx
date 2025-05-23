@@ -42,7 +42,8 @@ const Header = () => {
       const elementTop = element.offsetTop;
       const elementHeight = element.offsetHeight;
       const viewportHeight = window.innerHeight;
-      const scrollTo = elementTop - (viewportHeight / 2) + (elementHeight / 2);
+      const headerOffset = 100; // Offset to account for header height and some padding
+      const scrollTo = elementTop - headerOffset - (viewportHeight / 4);
       window.scrollTo({ top: scrollTo, behavior: "smooth" });
       setActive(id);
     }

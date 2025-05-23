@@ -21,11 +21,11 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 py-8 md:py-16 relative z-10 flex items-center">
         <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8">
           {/* Left Content */}
-          <div className="text-white max-w-xl font-poppins text-center md:text-left flex flex-col justify-center min-h-[400px] md:h-[600px] px-4 md:px-8">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-2 leading-tight">
+          <div className="text-white max-w-xl font-poppins text-left flex flex-col justify-center min-h-[400px] md:h-[600px] px-2 md:px-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
               Seu sorriso merece o melhor cuidado!
             </h1>
-            <p className="text-xl md:text-2xl mb-4 opacity-90 font-normal">
+            <p className="text-lg sm:text-xl md:text-2xl mb-6 opacity-90 font-normal">
               Agende uma avaliação agora mesmo!
             </p>
             
