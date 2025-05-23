@@ -43,7 +43,7 @@ const Header = () => {
       const aboutSection = document.getElementById("sobre");
       const imageBlock = aboutSection?.querySelector("div > div:first-child > div");
       if (aboutSection && imageBlock) {
-        const scrollTo = aboutSection.offsetTop + imageBlock.clientHeight + 120; // Increased offset to ensure it's below image
+        const scrollTo = aboutSection.offsetTop + imageBlock.clientHeight + 80; // Increased offset to ensure it's below image
         window.scrollTo({ top: scrollTo, behavior: "smooth" });
         setActive(id);
         return;
