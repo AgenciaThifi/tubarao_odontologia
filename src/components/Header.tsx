@@ -42,7 +42,6 @@ const Header = () => {
     const element = document.getElementById(id);
     if (element) {
       const elementTop = element.offsetTop;
-      const elementHeight = element.offsetHeight;
       const viewportHeight = window.innerHeight;
       const headerOffset = isMobile ? 140 : 100; // Larger offset for mobile
       const scrollTo = elementTop - headerOffset - (viewportHeight / 4);
