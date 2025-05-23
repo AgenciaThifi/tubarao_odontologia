@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useMobile } from '../hooks/use-mobile';
 
 const HeroSection = () => {
+  const isMobile = useMobile();
   return (
     <section id="hero" className="relative min-h-[100svh] bg-[#038dff] pt-16 md:pt-20 pb-20 md:pb-40 overflow-hidden">
       {/* Background Overlay with Gradient and blurred background image */}
@@ -23,10 +25,25 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="text-white max-w-xl font-poppins text-left flex flex-col justify-center min-h-[400px] md:h-[600px] px-2 md:px-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-              Seu sorriso merece o melhor cuidado!
+              {isMobile ? (
+                <>
+                  Seu sorriso<br />
+                  merece o<br />
+                  melhor cuidado!
+                </>
+              ) : (
+                "Seu sorriso merece o melhor cuidado!"
+              )}
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-6 opacity-90 font-normal">
-              Agende uma avaliação agora mesmo!
+              {isMobile ? (
+                <>
+                  Agende uma avaliação<br />
+                  agora mesmo!
+                </>
+              ) : (
+                "Agende uma avaliação agora mesmo!"
+              )}
             </p>
             
             {/* CTA Button */}

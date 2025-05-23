@@ -3,10 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useMobile } from "../hooks/use-mobile";
 
 const Header = () => {
   const [active, setActive] = useState("hero");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMobile = useMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,8 +42,9 @@ const Header = () => {
     const element = document.getElementById(id);
     if (element) {
       const elementTop = element.offsetTop;
+      const elementHeight = element.offsetHeight;
       const viewportHeight = window.innerHeight;
-      const headerOffset = 100; // Offset to account for header height and some padding
+      const headerOffset = isMobile ? 140 : 100; // Larger offset for mobile
       const scrollTo = elementTop - headerOffset - (viewportHeight / 4);
       window.scrollTo({ top: scrollTo, behavior: "smooth" });
       setActive(id);
