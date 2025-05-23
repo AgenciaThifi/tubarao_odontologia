@@ -29,7 +29,8 @@ const HeroSection = () => {
                 <>
                   Seu sorriso<br />
                   merece o<br />
-                  melhor cuidado!
+                  melhor<br />
+                  cuidado!
                 </>
               ) : (
                 "Seu sorriso merece o melhor cuidado!"
