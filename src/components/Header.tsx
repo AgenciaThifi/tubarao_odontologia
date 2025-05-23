@@ -40,7 +40,6 @@ const Header = () => {
     const element = document.getElementById(id);
     if (element) {
       const elementTop = element.offsetTop;
-      const elementHeight = element.offsetHeight;
       const viewportHeight = window.innerHeight;
       const headerOffset = 100; // Offset to account for header height and some padding
       const scrollTo = elementTop - headerOffset - (viewportHeight / 4);
