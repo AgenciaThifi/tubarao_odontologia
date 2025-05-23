@@ -40,7 +40,7 @@ const ServiceCard = ({ icon, title, description, bgColor, isBlue }: {
   bgColor: string;
   isBlue: boolean;
 }) => (
-  <div className={`${bgColor} shadow-lg w-full md:w-[300px] min-h-[400px] flex flex-col items-center text-center p-8 transform ${isBlue ? '-translate-y-3' : 'translate-y-3'} transition-transform`}>
+  <div className={`${bgColor} shadow-lg w-full min-h-[400px] flex flex-col items-center text-center p-6 sm:p-8 transform hover:scale-105 transition-transform duration-300`}>
     <div className="relative w-24 h-24 mb-6">
       <Image
         src={icon}
@@ -73,7 +73,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-stretch gap-0 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
