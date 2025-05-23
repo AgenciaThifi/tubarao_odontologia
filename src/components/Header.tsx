@@ -39,9 +39,20 @@ const Header = () => {
 
   const handleClick = (id: string) => (e: React.MouseEvent) => {
     e.preventDefault();
+    if (id === "sobre" && isMobile) {
+      const aboutSection = document.getElementById("sobre");
+      const imageBlock = aboutSection?.querySelector("div > div:first-child > div");
+      if (aboutSection && imageBlock) {
+        const scrollTo = aboutSection.offsetTop + imageBlock.clientHeight + 200; // Increased offset to ensure it's below image
+        window.scrollTo({ top: scrollTo, behavior: "smooth" });
+        setActive(id);
+        return;
+      }
+    }
     const element = document.getElementById(id);
     if (element) {
       const elementTop = element.offsetTop;
+      const elementHeight = element.offsetHeight;
       const viewportHeight = window.innerHeight;
       const headerOffset = isMobile ? 140 : 100; // Larger offset for mobile
       const scrollTo = elementTop - headerOffset - (viewportHeight / 4);
