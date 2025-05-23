@@ -103,7 +103,7 @@ const ServicesSection = () => {
         </div>
 
         {isMobile ? (
-          <div className="grid grid-cols-2 gap-4 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-6 max-w-7xl mx-auto px-4">
             {services.map((service, index) => (
               <MobileServiceCard
                 key={index}
