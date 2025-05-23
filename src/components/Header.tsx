@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const Header = () => {
   const [active, setActive] = useState("hero");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,7 +124,11 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button className="p-2">
+          <button 
+            className="p-2" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
             <svg
               className="w-6 h-6 text-black"
               fill="none"
@@ -134,11 +139,91 @@ const Header = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
+                d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
               />
             </svg>
           </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-3xl mt-2 py-4 px-6 md:hidden">
+            <nav className="flex flex-col gap-4 font-semibold text-lg">
+              <a
+                href="#hero"
+                onClick={(e) => {
+                  handleClick("hero")(e);
+                  setIsMenuOpen(false);
+                }}
+                className={`cursor-pointer transition-colors ${
+                  active === "hero" ? "text-[#038dff]" : "text-black hover:text-[#038dff]"
+                }`}
+              >
+                Início
+              </a>
+              <a
+                href="#cta"
+                onClick={(e) => {
+                  handleClick("cta")(e);
+                  setIsMenuOpen(false);
+                }}
+                className={`cursor-pointer transition-colors ${
+                  active === "cta" ? "text-[#038dff]" : "text-black hover:text-[#038dff]"
+                }`}
+              >
+                Agendar
+              </a>
+              <a
+                href="#sobre"
+                onClick={(e) => {
+                  handleClick("sobre")(e);
+                  setIsMenuOpen(false);
+                }}
+                className={`cursor-pointer transition-colors ${
+                  active === "sobre" ? "text-[#038dff]" : "text-black hover:text-[#038dff]"
+                }`}
+              >
+                Sobre
+              </a>
+              <a
+                href="#convenios"
+                onClick={(e) => {
+                  handleClick("convenios")(e);
+                  setIsMenuOpen(false);
+                }}
+                className={`cursor-pointer transition-colors ${
+                  active === "convenios" ? "text-[#038dff]" : "text-black hover:text-[#038dff]"
+                }`}
+              >
+                Convênios
+              </a>
+              <a
+                href="#contato"
+                onClick={(e) => {
+                  handleClick("contato")(e);
+                  setIsMenuOpen(false);
+                }}
+                className={`cursor-pointer transition-colors ${
+                  active === "contato" ? "text-[#038dff]" : "text-black hover:text-[#038dff]"
+                }`}
+              >
+                Contato
+              </a>
+              <a
+                href="#contato"
+                onClick={(e) => {
+                  handleClick("contato")(e);
+                  setIsMenuOpen(false);
+                }}
+                className={`cursor-pointer transition-colors ${
+                  active === "contato" ? "text-[#038dff]" : "text-black hover:text-[#038dff]"
+                }`}
+              >
+                Localização
+              </a>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

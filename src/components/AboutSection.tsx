@@ -30,7 +30,7 @@ const AboutSection = () => {
         </div>
 
         {/* Info Metrics */}
-        <div className="flex justify-center items-start gap-24">
+        <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 md:gap-24">
           {/* Years Card */}
           <div className="text-center">
             <div className="text-[#008CFF] mb-3">
